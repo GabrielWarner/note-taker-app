@@ -5,6 +5,9 @@ In this application I created various express server routes to post, get and del
 
 Deployed application: https://note-taker-app-gabrielwarner.herokuapp.com/
 
+![image](https://user-images.githubusercontent.com/98490756/180617654-8d0b950f-a8f2-4a3e-b5f7-a680cd183136.png)
+
+
 ![image](https://user-images.githubusercontent.com/98490756/180617567-0266683b-4f0e-4855-84e8-b8d6a24d4bd8.png)
 
 
