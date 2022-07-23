@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
+const uuid = require('./helpers/uuid');
 //middleware for find static assets
 app.use(express.static("public"));
 
@@ -17,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "./notes.html"));
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
   });
 
 
