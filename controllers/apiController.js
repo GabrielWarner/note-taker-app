@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const { readFromFile, readAndAppend, readDeleteAppend } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
+const db = require('../db/db.json')
 
 router.get("/", (req, res) => {
     fs.readFile("./db/db.json", "utf8", (err, data) => {
@@ -20,7 +21,7 @@ router.post("/", (req, res) => {
         const newNote = {
             title: req.body.title,
             text: req.body.text,
-            note_id: uuid(),
+            id: uuid(),
         }
         readAndAppend(newNote, './db/db.json')
         res.json("Succsesfully added")
@@ -28,6 +29,15 @@ router.post("/", (req, res) => {
         res.redirect('error in adding note')
     }
 })
+
+router.delete("/:id", (req, res) => {
+
+        const { id } = req.params
+        readDeleteAppend(id, './db/db.json')
+        return res.send("Success")
+
+})
+
 
 
 module.exports = router;
