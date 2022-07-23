@@ -22,7 +22,6 @@ app.get("/notes", (req, res) => {
   });
 
 
-
 app.listen(PORT, () => {
   console.log("listenin to port " + PORT);
 });

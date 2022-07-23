@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const { readFromFile, readAndAppend, readDeleteAppend } = require('../helpers/fsUtils');
+const { readAndAppend, readDeleteAppend } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
-const db = require('../db/db.json')
+
+
 
 router.get("/", (req, res) => {
     fs.readFile("./db/db.json", "utf8", (err, data) => {
