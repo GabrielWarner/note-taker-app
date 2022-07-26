@@ -139,7 +139,7 @@ const renderNoteList = async (notes) => {
 
     if (delBtn) {
       const delBtnEl = document.createElement('i');
-      delBtnEl.classList.add(
+      delBtnEl.classList.add(-
         'fas',
         'fa-trash-alt',
         'float-right',
